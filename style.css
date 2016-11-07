@@ -49,8 +49,9 @@ table {
 	height:440px;
 	border:1px solid black;
 	position: absolute;
-	left: calc(50% - 165px);
-	top: calc(50% - 165px);
+    /*to correct centering of the wrap*/
+	left: calc(50% - 220px);
+	top: calc(50% - 220px);
 }
 
 .container{
