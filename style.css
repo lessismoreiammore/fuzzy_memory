@@ -44,12 +44,11 @@ table {
 }
 
 .wrap{
-    perspective:500px;
+    perspective:1000px;
 	width:440px;
 	height:440px;
 	border:1px solid black;
 	position: absolute;
-    /*to correct centering of the wrap*/
 	left: calc(50% - 220px);
 	top: calc(50% - 220px);
 }
@@ -58,7 +57,7 @@ table {
 	width:100px;
 	height: 100px;
 	margin:5px;
-	transform: rotateY(0);
+	transform: rotateY(180deg);
 	transform-style: preserve-3d;
 	float:left;
 	transition:400ms;
