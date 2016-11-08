@@ -82,7 +82,8 @@ table {
 .back{
 	transform: rotateY(180deg);
 	transform-style: preserve-3d;
-	background: blue;
+	background: #fff;
+	border:1px solid #000;
 }
 
 /*classes for pairing images*/
