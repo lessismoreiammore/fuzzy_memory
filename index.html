@@ -134,11 +134,12 @@
         //Loop through all of the tiles and make a new array of pairs by assigning a random hipster class to the empty array
         for (let i = 0; i < tile_pairs; i++) {
             let r = random(temp_array.length);
-            var fTile = temp_array.splice(r, 1);
-            tile_array = tile_array.concat(fTile);
-            tile_array = tile_array.concat(fTile);
+            //Add the random hipster class twice since we need a pair for a memory game
+            tile_array = tile_array.concat(temp_array.splice(r, 1));
+            tile_array = tile_array.concat(temp_array.splice(r, 1));
         }
 
+        //shuffle the array with hipster classes
         tile_array.sort(randomise);
         console.log(tile_array);
 
