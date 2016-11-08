@@ -10,6 +10,8 @@
 
 <body>
 
+    <button>Play again!</button>
+
     <div class="wrap">
 
         <div class="container">
@@ -110,46 +112,48 @@
 
         // GAME SET UP
 
-        //array of class names
-        var hipster_array = [
-            "hipster-1",
-            "hipster-2",
-            "hipster-3",
-            "hipster-4",
-            "hipster-5",
-            "hipster-6",
-            "hipster-7",
-            "hipster-8"
-        ];
+        function gameSetUp() {
+            //array of class names
+            var hipster_array = [
+                "hipster-1",
+                "hipster-2",
+                "hipster-3",
+                "hipster-4",
+                "hipster-5",
+                "hipster-6",
+                "hipster-7",
+                "hipster-8"
+            ];
 
-        // Make a copy of person_array, since the next few operations will modify the array
-        // If there is no copy after the button reshuffle is pressed nothing will be displayed as cards since the array has been modified by the first run of the program
-        var temp_array = hipster_array.slice(0);
+            // Make a copy of person_array, since the next few operations will modify the array
+            // If there is no copy after the button reshuffle is pressed nothing will be displayed as cards since the array has been modified by the first run of the program
+            var temp_array = hipster_array.slice(0);
 
-        //An array for the tiles to create
-        //this array will hold an array of random classes for tiles
-        var tile_array = [];
-        //this array is used to set the number of pairs
-        var tile_pairs = 8;
+            //An array for the tiles to create
+            //this array will hold an array of random classes for tiles
+            var tile_array = [];
+            //this array is used to set the number of pairs
+            var tile_pairs = 8;
 
-        //Loop through all of the tiles and make a new array of pairs by assigning a random hipster class to the empty array
-        for (let i = 0; i < tile_pairs; i++) {
-            let r = random(temp_array.length);
-            //Add the random hipster class twice since we need a pair for a memory game
-            let tile = temp_array.splice(r, 1);
-            tile_array = tile_array.concat(tile);
-            tile_array = tile_array.concat(tile);
+            //Loop through all of the tiles and make a new array of pairs by assigning a random hipster class to the empty array
+            for (let i = 0; i < tile_pairs; i++) {
+                let r = random(temp_array.length);
+                //Add the random hipster class twice since we need a pair for a memory game
+                let tile = temp_array.splice(r, 1);
+                tile_array = tile_array.concat(tile);
+                tile_array = tile_array.concat(tile);
+            }
+
+            //shuffle the array with hipster classes
+            tile_array.sort(randomise);
+            console.log(tile_array);
+
+            //Assign a tile class to each back
+            $(".back").each(function(i) {
+                $(this).addClass(tile_array[i]);
+                $(this).parent().attr("data-name", tile_array[i]);
+            });
         }
-
-        //shuffle the array with hipster classes
-        tile_array.sort(randomise);
-        console.log(tile_array);
-
-        //Assign a tile class to each back
-        $(".back").each(function(i) {
-            $(this).addClass(tile_array[i]);
-            $(this).parent().attr("data-name", tile_array[i]);
-        });
 
         //GAME LOGIC
         var firstChoice = undefined;
@@ -184,6 +188,9 @@
                 secondChoice = undefined;
             }
         });
+
+        //calling a function to prepare the game board
+        gameSetUp();
     </script>
 </body>
 
