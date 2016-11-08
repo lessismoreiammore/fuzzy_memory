@@ -66,24 +66,70 @@ table {
 	transform: rotateY(180deg);
 }
 
-.front{
+.card{
 	position:absolute;
 	left:0;
 	top:0;
 	width:100%;
 	height:100%;
 	backface-visibility: hidden;
+}
+
+.front{
 	background-color: red;
 }
 
 .back{
-	position: absolute;
-	left:0;
-	top:0;
 	transform: rotateY(180deg);
 	transform-style: preserve-3d;
-	width:100%;
-	height:100%;
-	backface-visibility: hidden;
 	background: blue;
+}
+
+/*classes for pairing images*/
+.hipster-1{
+    background-image: url('images/accesory.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-2{
+    background-image: url('images/accessory-1.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-3{
+    background-image: url('images/cycling.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-4{
+    background-image: url('images/photograph.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-5{
+    background-image: url('images/footwear.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-6{
+    background-image: url('images/hipster-2.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-7{
+    background-image: url('images/horn.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-8{
+    background-image: url('images/hot-drinks.svg');
+	background-repeat:no-repeat;
+	background-position: center;
 }

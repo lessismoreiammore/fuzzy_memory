@@ -37,11 +37,6 @@
         </div>
 
         <div class="container">
-            <div class="front"></div>
-            <div class="back"></div>
-        </div>
-
-        <div class="container">
             <div class="front card"></div>
             <div class="back card"></div>
         </div>
@@ -52,8 +47,13 @@
         </div>
 
         <div class="container">
-            <div class="front"></div>
-            <div class="back"></div>
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="container">
+            <div class="front card"></div>
+            <div class="back card"></div>
         </div>
 
         <div class="container">
@@ -110,49 +110,20 @@
         // Game set up
 
         //array of class names
-        var person_array = [
-            "person-1",
-            "person-2",
-            "person-3",
-            "person-4",
-            "person-5",
-            "person-6",
-            "person-7",
-            "person-8",
-            "person-9",
-            "person-10",
-            "person-11",
-            "person-12",
-            "person-13",
-            "person-14",
-            "person-15",
-            "person-16",
-            "person-17",
-            "person-18",
-            "person-19",
-            "person-20",
-            "person-21",
-            "person-22",
-            "person-23",
-            "person-24",
-            "person-25",
-            "person-26",
-            "person-27",
-            "person-28",
-            "person-29",
-            "person-30",
-            "person-31",
-            "person-32",
-            "person-33",
-            "person-34",
-            "person-35",
-            "person-36",
-            "person-37"
+        var hipster_array = [
+            "hipster-1",
+            "hipster-2",
+            "hipster-3",
+            "hipster-4",
+            "hipster-5",
+            "hipster-6",
+            "hipster-7",
+            "hipster-8"
         ];
 
         // Make a copy of person_array, since the next few operations will modify the array
         // If there is no copy after the button reshuffle is pressed nothing will be displayed as cards since the array has been modified by the first run of the program
-        var temp_array = person_array.slice(0);
+        var temp_array = hipster_array.slice(0);
 
         //An array for the tiles to create
         //this array will hold an array of random classes for tiles
