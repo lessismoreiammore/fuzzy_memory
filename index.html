@@ -151,11 +151,6 @@
             $(this).parent().attr("data-name", tile_array[i]);
         });
 
-        //Fliping function
-        $(".container").click(function(event) {
-            $(this).toggleClass("flip");
-        });
-
         //GAME LOGIC
         var firstChoice = undefined;
         var secondChoice = undefined;
@@ -171,7 +166,7 @@
                 firstChoice = $(this);
             } else {
                 secondChoice = $(this);
-                if (secondChoice.attr("data-name") === secondChoice.attr("data-name")) {
+                if (firstChoice.attr("data-name") === secondChoice.attr("data-name")) {
                     console.log("Match!");
                     firstChoice.addClass("lock");
                     secondChoice.addClass("lock");

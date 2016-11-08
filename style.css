@@ -43,12 +43,6 @@ table {
 	border-spacing: 0;
 }
 
-/*buttons styling*/
-button{
-	font-size: 20px;
-	padding:0.5em;
-}
-
 /*tiles container styling*/
 .wrap{
     perspective:500px;
@@ -154,5 +148,5 @@ button{
 }
 
 .lock{
-    
+
 }
