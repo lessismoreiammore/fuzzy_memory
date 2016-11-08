@@ -10,7 +10,7 @@
 
 <body>
 
-    <button>Play again!</button>
+    <button id="shuffle">Play again!</button>
 
     <div class="wrap">
 
@@ -111,8 +111,15 @@
         }
 
         // GAME SET UP
+        var tile_array = [];
 
         function gameSetUp() {
+            //Clean a tile class of each back
+            $(".back").each(function(i) {
+                $(this).removeClass(tile_array[i]);
+                // $(this).parent().attr("data-name", tile_array[i]);
+            });
+
             //array of class names
             var hipster_array = [
                 "hipster-1",
@@ -131,7 +138,7 @@
 
             //An array for the tiles to create
             //this array will hold an array of random classes for tiles
-            var tile_array = [];
+            tile_array = [];
             //this array is used to set the number of pairs
             var tile_pairs = 8;
 
@@ -147,6 +154,11 @@
             //shuffle the array with hipster classes
             tile_array.sort(randomise);
             console.log(tile_array);
+            //
+            $(".container").each(function() {
+                $(this).removeClass("flip");
+                $(this).removeClass("lock");
+            });
 
             //Assign a tile class to each back
             $(".back").each(function(i) {
@@ -191,6 +203,10 @@
 
         //calling a function to prepare the game board
         gameSetUp();
+
+        //shuffle
+        var button = document.getElementById('shuffle');
+        button.onclick = gameSetUp;
     </script>
 </body>
 
