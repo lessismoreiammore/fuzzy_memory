@@ -42,6 +42,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/*buttons styling*/
+button{
+	font-size: 20px;
+	padding:0.5em;
+}
+
+/*tiles container styling*/
 .wrap{
     perspective:500px;
 	width:440px;
@@ -52,6 +60,7 @@ table {
 	top: calc(50% - 220px);
 }
 
+/*each tile container styling*/
 .container{
 	width:100px;
 	height: 100px;
@@ -62,10 +71,7 @@ table {
 	transition:400ms;
 }
 
-.container.flip{
-	transform: rotateY(180deg);
-}
-
+/*card styling*/
 .card{
 	position:absolute;
 	left:0;
@@ -75,10 +81,12 @@ table {
 	backface-visibility: hidden;
 }
 
+/*styling of the card's front side*/
 .front{
-	background-color: red;
+	background-color: #FF462E;
 }
 
+/*styling of the card's back side*/
 .back{
 	transform: rotateY(180deg);
 	transform-style: preserve-3d;
@@ -133,4 +141,18 @@ table {
     background-image: url('images/hot-drinks.svg');
 	background-repeat:no-repeat;
 	background-position: center;
+}
+
+/*styling for rotation*/
+.container.flip{
+	transform: rotateY(180deg);
+}
+
+/*styling for just flip*/
+.flip{
+    transform: rotateY(180deg);
+}
+
+.lock{
+    
 }

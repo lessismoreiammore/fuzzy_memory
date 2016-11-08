@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="wrap">
 
         <div class="container">
@@ -135,8 +136,9 @@
         for (let i = 0; i < tile_pairs; i++) {
             let r = random(temp_array.length);
             //Add the random hipster class twice since we need a pair for a memory game
-            tile_array = tile_array.concat(temp_array.splice(r, 1));
-            tile_array = tile_array.concat(temp_array.splice(r, 1));
+            let tile = temp_array.splice(r, 1);
+            tile_array = tile_array.concat(tile);
+            tile_array = tile_array.concat(tile);
         }
 
         //shuffle the array with hipster classes
@@ -157,6 +159,36 @@
         //GAME LOGIC
         var firstChoice = undefined;
         var secondChoice = undefined;
+
+        $(".container").click(function() {
+            if ($(this).hasClass("flip") || $(this).hasClass("lock")) {
+                return;
+            }
+
+            $(this).addClass("flip");
+
+            if (firstChoice === undefined) {
+                firstChoice = $(this);
+            } else {
+                secondChoice = $(this);
+                if (secondChoice.attr("data-name") === secondChoice.attr("data-name")) {
+                    console.log("Match!");
+                    firstChoice.addClass("lock");
+                    secondChoice.addClass("lock");
+                } else {
+                    console.log("No match");
+                    let a = firstChoice;
+                    let b = secondChoice;
+                    setTimeout(function() {
+                        a.removeClass("flip");
+                        b.removeClass("flip");
+                    }, 1000);
+                }
+
+                firstChoice = undefined;
+                secondChoice = undefined;
+            }
+        });
     </script>
 </body>
 
