@@ -95,7 +95,7 @@
     </div>
 
     <script>
-        //helper functions
+        //HELPER FUNCTIONS
 
         //get random number in range between 0 to range -1
         function random(range) {
@@ -107,7 +107,7 @@
             return random(2);
         }
 
-        // Game set up
+        // GAME SET UP
 
         //array of class names
         var hipster_array = [
@@ -143,17 +143,17 @@
         console.log(tile_array);
 
         //Assign a tile class to each back
-        // $(".back").each(function(i) {
-        //     $(this).addClass(tile_array[i]);
-        //     $(this).parent().attr("data-name", tile_array[i]);
-        // });
+        $(".back").each(function(i) {
+            $(this).addClass(tile_array[i]);
+            $(this).parent().attr("data-name", tile_array[i]);
+        });
 
         //Fliping function
         $(".container").click(function(event) {
             $(this).toggleClass("flip");
         });
 
-        //Game logic
+        //GAME LOGIC
         var firstChoice = undefined;
         var secondChoice = undefined;
     </script>
