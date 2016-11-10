@@ -36,8 +36,125 @@ p {
   background:#ffce6e;
 }
 
+/* Main */
+.main {
+  height: 800px;
+  background: url('https://a2ua.com/hipster/hipster-007.jpg')no-repeat center center;
+  background-position: top;
+  background-size: cover;
+  color:#fff;
+  text-align:center;
+}
+
+.main .container {
+    position: relative;
+    top: 150px;
+}
+
+.main h1 {
+  font-size: 150px;
+  color: #ff462e;
+  margin: 0;
+}
+
+.main p {
+  font-size: 18px;
+  margin: 20px 0 40px 0;
+}
 
 
+/* Supporting */
+.supporting {
+  text-align: center;
+  padding: 50px 0 80px;
+  background:#868275;
+}
+
+.supporting img{
+  width: 100px;
+}
+
+.supporting .col {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.supporting h2 {
+  color: #ffce6e;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.supporting h3{
+  color: #ffce6e;
+  font-size: 40px;
+  margin: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.supporting p {
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 20px;
+  font-size: 18px;
+}
+
+
+/* Feature */
+.feature {
+  height: 600px;
+  background: #fff;
+  text-align:center;
+  color: #261d16;
+}
+
+.feature .container {
+    position: relative;
+    top: 50px;
+}
+
+.feature h2 {
+  color: #ff462e;
+  font-size: 40px;
+}
+
+.feature p{
+  color:#261d16;
+}
+
+
+/* Footer */
+.footer {
+ background: url('https://a2ua.com/hipster/hipster-007.jpg') no-repeat center center;
+background-size: cover;
+background-position: top;
+height: 800px;
+text-align: center;
+  }
+
+.footer .container{
+position: relative;
+top: 50px;
+}
+
+.footer h2 {
+  color: #fff;
+  font-size: 40px;
+  margin: 0 0 20px 0;
+  padding:50px 0 0;
+  }
+
+.footer p {
+  color:#ff462e;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+
+/*GAME STYLING*/
 /*tiles container styling*/
 .wrap{
     perspective:500px;
