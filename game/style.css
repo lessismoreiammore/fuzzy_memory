@@ -1,0 +1,153 @@
+/*reset*/
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}*/
+/* HTML5 display-role reset for older browsers */
+/*article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+
+
+/*tiles container styling*/
+.wrap{
+    perspective:500px;
+	width:440px;
+	height:440px;
+	border:1px solid black;
+	position: absolute;
+	left: calc(50% - 220px);
+	top: calc(50% - 220px);
+}
+
+/*each tile container styling*/
+.contain{
+	width:100px;
+	height: 100px;
+	margin:5px;
+	transform: rotateY(0);
+	transform-style: preserve-3d;
+	float:left;
+	transition:400ms;
+}
+
+/*card styling*/
+.card{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	backface-visibility: hidden;
+}
+
+/*styling of the card's front side*/
+.front{
+	background-color: #FF462E;
+}
+
+/*styling of the card's back side*/
+.back{
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;
+	background: #fff;
+	border:1px solid #000;
+}
+
+/*classes for pairing images*/
+.hipster-1{
+    background-image: url('images/accesory.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-2{
+    background-image: url('images/accessory-1.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-3{
+    background-image: url('images/cycling.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-4{
+    background-image: url('images/photograph.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-5{
+    background-image: url('images/footwear.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-6{
+    background-image: url('images/hipster-2.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-7{
+    background-image: url('images/horn.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.hipster-8{
+    background-image: url('images/hot-drinks.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+/*styling for rotation*/
+.contain.flip{
+	transform: rotateY(180deg);
+}
+
+/*styling for just flip*/
+.flip{
+    transform: rotateY(180deg);
+}
+
+.lock{
+
+}

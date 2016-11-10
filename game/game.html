@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>hipsters for dummies</title>
+    <link rel="stylesheet" href="style.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <button id="shuffle">Play again!</button>
+
+    <div class="wrap">
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+        <div class="contain">
+            <div class="front card"></div>
+            <div class="back card"></div>
+        </div>
+
+
+    </div>
+
+    <script>
+        //HELPER FUNCTIONS
+
+        //get random number in range between 0 to range -1
+        function random(range) {
+            return Math.floor(Math.random() * range);
+        }
+
+        //returns random 0 or 1, false or true
+        function randomise() {
+            return random(2);
+        }
+
+        // GAME SETUP
+        var tile_array = [];
+
+        function gameSetup() {
+
+            //this counter is used for making a game raiting, see its explanation under the game logic section of script
+            //it gains null value here so that after reshuffle the user can have a new raiting
+            counter = 0;
+            //Clean a tile class of each back, need for reshuffle when the function is laucnhed 2nd or more time to delete a hipster class
+            $(".back").each(function(i) {
+                $(this).removeClass(tile_array[i]);
+            });
+
+            //array of class names
+            var hipster_array = [
+                "hipster-1",
+                "hipster-2",
+                "hipster-3",
+                "hipster-4",
+                "hipster-5",
+                "hipster-6",
+                "hipster-7",
+                "hipster-8"
+            ];
+
+            // Make a copy of person_array, since the next few operations will modify the array
+            // If there is no copy after the button reshuffle is pressed nothing will be displayed as cards since the array has been modified by the first run of the program
+            var temp_array = hipster_array.slice(0);
+
+            //An array for the tiles to create
+            //this array will hold an array of random classes for tiles
+            tile_array = [];
+            //this array is used to set the number of pairs
+            var tile_pairs = 8;
+
+            //Loop through all of the tiles and make a new array of pairs by assigning a random hipster class to the empty array
+            for (let i = 0; i < tile_pairs; i++) {
+                let r = random(temp_array.length);
+                //Add the random hipster class twice since we need a pair for a memory game
+                let tile = temp_array.splice(r, 1);
+                tile_array = tile_array.concat(tile);
+                tile_array = tile_array.concat(tile);
+            }
+
+            //shuffle the array with hipster classes
+            tile_array.sort(randomise);
+            console.log(tile_array);
+
+            //part for reshuffle when the program is launched 2nd or more time to delete classes flip and lock
+            $(".contain").each(function() {
+                $(this).removeClass("flip");
+                $(this).removeClass("lock");
+            });
+
+            //Assign a tile class to each back
+            $(".back").each(function(i) {
+                $(this).addClass(tile_array[i]);
+                $(this).parent().attr("data-name", tile_array[i]);
+            });
+        }
+
+        //GAME LOGIC
+        var firstChoice = undefined;
+        var secondChoice = undefined;
+        //variable to save the number of clicks which will be used 
+        var counter = 0;
+
+        $(".contain").click(function() {
+            if ($(this).hasClass("flip") || $(this).hasClass("lock")) {
+                return;
+            }
+
+            $(this).addClass("flip");
+
+            if (firstChoice === undefined) {
+                firstChoice = $(this);
+            } else {
+                secondChoice = $(this);
+                if (firstChoice.attr("data-name") === secondChoice.attr("data-name")) {
+                    console.log("Match!");
+                    counter++;
+                    firstChoice.addClass("lock");
+                    secondChoice.addClass("lock");
+                } else {
+                    console.log("No match");
+                    counter++;
+                    let a = firstChoice;
+                    let b = secondChoice;
+                    setTimeout(function() {
+                        a.removeClass("flip");
+                        b.removeClass("flip");
+                    }, 1000);
+                }
+                //testing line for debugging
+                console.log(counter);
+                firstChoice = undefined;
+                secondChoice = undefined;
+            }
+        });
+
+        //calling a function to prepare the game board
+        gameSetup();
+
+        //shuffle
+        var button = document.getElementById('shuffle');
+        button.onclick = gameSetup;
+    </script>
+</body>
+
+</html>
