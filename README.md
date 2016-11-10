@@ -42,5 +42,6 @@ The game result is stored so that to be shown along with a message with further 
 The rating system is chosen on the basis of game experience and estimated to such levels based on the amount of clicks done by the user:
 
 8-16 | The super hipster level
+-------|----------------------------------------
 16-24 | The middle hipster level
 24 and higher | Not the hipster level
