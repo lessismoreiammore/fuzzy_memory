@@ -45,4 +45,28 @@ scores amount | type of level
 -------|----------------------------------------
 8-16 | The super hipster level
 16-24 | The middle hipster level
-24 and higher | Not the hipster level
+24 or higher | Not the hipster level
+
+##4. Code example##
+
+This code snippet solved the problem to write an ouput to the user at the end of the game
+
+```javascript
+function userOutput(j, i) {
+    let newH = document.getElementById('message');
+    newH.textContent = "Your hipster score is " + j;
+    let newP = document.createElement('p');
+    newP.id = "deleted";
+    newP.textContent = i;
+    document.getElementById('result').appendChild(newP);
+}
+´´´
+
+This code snippet helps to erase the message after the user presses reshuffle button
+```javascript
+var deletedChild = document.getElementById('deleted');
+if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
+    var sorrowParent = document.getElementById('result');
+    sorrowParent.removeChild(deletedChild);
+}
+´´´
