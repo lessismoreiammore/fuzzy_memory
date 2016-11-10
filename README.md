@@ -1,7 +1,8 @@
 
 #What is a hipster, man?#
 
-My project's main purpose was to create a simple memory game in pure HTML, CSS, JS.
+My project's main purpose was to create a simple memory game in pure HTML, CSS, JS and place it in a nice UI.
+I prefer to make a kind of eLearning project about hipsters.
 
 ##1. Example##
 
