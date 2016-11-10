@@ -15,11 +15,28 @@ p {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/*button styling*/
-button{
-    font-size: 26px;
-    padding:5px;
+/* PAGE STYLING*/
+
+.container {
+  width: 940px;
+  margin: 0 auto;
 }
+
+.btn{
+  text-decoration:none;
+  background:#261d16;
+  padding:8px 30px;
+  font-size: 18px;
+  color:#fff;
+  display: inline-block;
+}
+
+.btn:hover{
+  color:#fff;
+  background:#ffce6e;
+}
+
+
 
 /*tiles container styling*/
 .wrap{
