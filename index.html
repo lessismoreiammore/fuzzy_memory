@@ -10,98 +10,152 @@
 </head>
 
 <body>
-
-    <button id="shuffle">Play again!</button>
-
-    <div class="wrap">
-
+    <div class="main">
         <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
+            <h1>Who is a hipster, man?</h1>
+            <p>web-tutorial for complete beginners
+            </p>
+            <a href="#" class="btn">Scroll the page to start ▽</a>
         </div>
+    </div>
 
+    <div class="supporting">
         <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+            <h2>What are the first words which came to your mind when somebody says "hipster?"</h2>
+            <div class="col">
+                <img src="images/hot-drinks.svg" alt="coffee" />
+                <p>99% of blood is coffee</p>
+            </div>
+            <div class="col">
+                <img src="images/cycling.svg" alt="bike" />
+                <p>cycling all the weather</p>
+            </div>
+            <div class="col">
+                <img src="images/hipster-2.svg" alt="" />
+                <p>Movember is every month</p>
+            </div>
 
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="feature">
         <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
+            <h2>Come on, these are just stereotypes, man! </h2>
+            <p>For deepen your knowledge, please, check our video</p>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/jbTI7eWaQbk" frameborder="0" allowfullscreen></iframe>
         </div>
+    </div>
 
+    <div class="supporting">
         <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
+            <h3>Are you sure you get it?</h3>
+            <p>Play the game below! It is a simple memory game</p>
+            <a href="#" class="btn">Scroll the page to start game▽</a>
         </div>
+    </div>
 
+    <div class="footer">
         <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+            <div id="result">
+                <h2 id="message">What is your hipster score?</h2>
+            </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+            <div class="wrap">
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
-        <div class="container">
-            <div class="front card"></div>
-            <div class="back card"></div>
-        </div>
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
 
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+                <div class="contain">
+                    <div class="front card"></div>
+                    <div class="back card"></div>
+                </div>
+
+            </div>
+
+            <a class="btn" id="shuffle">Play again ↻</a>
+
+        </div>
 
     </div>
 
     <script>
         //HELPER FUNCTIONS
 
-        //get random number in range between 0 to range -1
+        //get random number in range between 0 to range - 1
         function random(range) {
             return Math.floor(Math.random() * range);
         }
@@ -111,14 +165,19 @@
             return random(2);
         }
 
-        // GAME SET UP
+        // GAME SETUP
         var tile_array = [];
 
         function gameSetUp() {
-            //Clean a tile class of each back
+            //this counter is used for making a game raiting, see its explanation under the game logic section of script
+            //it gains null value here so that after reshuffle the user can have a new raiting
+            counter = 0;
+            var heading = document.getElementById('message');
+            heading.textContent = "What is your hipster score?";
+
+            //Clean a tile class of each back, need for reshuffle when the function is laucnhed 2nd or more time to delete a hipster class
             $(".back").each(function(i) {
                 $(this).removeClass(tile_array[i]);
-                // $(this).parent().attr("data-name", tile_array[i]);
             });
 
             //array of class names
@@ -155,8 +214,9 @@
             //shuffle the array with hipster classes
             tile_array.sort(randomise);
             console.log(tile_array);
-            //
-            $(".container").each(function() {
+
+            //part for reshuffle when the program is launched 2nd or more time to delete classes flip and lock
+            $(".contain").each(function() {
                 $(this).removeClass("flip");
                 $(this).removeClass("lock");
             });
@@ -166,13 +226,42 @@
                 $(this).addClass(tile_array[i]);
                 $(this).parent().attr("data-name", tile_array[i]);
             });
+
+            var deletedChild = document.getElementById('deleted');
+            if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
+                var sorrowParent = document.getElementById('result');
+                sorrowParent.removeChild(deletedChild);
+            }
         }
 
         //GAME LOGIC
         var firstChoice = undefined;
         var secondChoice = undefined;
+        //variable to save the number of clicks which will be used
+        var counter = 0;
+        //variable which store the game ouput
+        var output = " ";
+        // user raiting check
+        function counterCheck(i) {
+            if (i <= 16) {
+                output = "You are super hipster, dude!!!";
+            } else if ((i > 16) && (i < 24)) {
+                output = "Do you feel how your beard starts growing? You are doing well, dude!";
+            } else {
+                output = "Hm...You will not survive in this hipster world! Watch the video again, dude!";
+            }
+        }
 
-        $(".container").click(function() {
+        function userOutput(j, i) {
+            let newH = document.getElementById('message');
+            newH.textContent = "Your hipster score is " + j;
+            let newP = document.createElement('p');
+            newP.id = "deleted";
+            newP.textContent = i;
+            document.getElementById('result').appendChild(newP);
+        }
+
+        $(".contain").click(function() {
             if ($(this).hasClass("flip") || $(this).hasClass("lock")) {
                 return;
             }
@@ -185,10 +274,16 @@
                 secondChoice = $(this);
                 if (firstChoice.attr("data-name") === secondChoice.attr("data-name")) {
                     console.log("Match!");
+                    counter++;
                     firstChoice.addClass("lock");
                     secondChoice.addClass("lock");
+                    if (document.querySelectorAll('.lock').length === 16) {
+                        counterCheck(counter);
+                        userOutput(counter, output);
+                    }
                 } else {
                     console.log("No match");
+                    counter++;
                     let a = firstChoice;
                     let b = secondChoice;
                     setTimeout(function() {
@@ -197,18 +292,24 @@
                     }, 1000);
                 }
 
+                //testing line for debugging
+                console.log(counter);
+
                 firstChoice = undefined;
                 secondChoice = undefined;
             }
         });
 
+        //GAME FLOW
+
         //calling a function to prepare the game board
         gameSetUp();
 
-        //shuffle
+        //shuffle when one round of the game ends
         var button = document.getElementById('shuffle');
         button.onclick = gameSetUp;
     </script>
+
 </body>
 
 </html>
