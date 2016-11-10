@@ -202,25 +202,25 @@ top: 50px;
 
 /*classes for pairing images*/
 .hipster-1{
-    background-image: url('images/accesory.svg');
+  background-image: url('images/accesory.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
 
 .hipster-2{
-    background-image: url('images/accessory-1.svg');
+  background-image: url('images/accessory-1.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
 
 .hipster-3{
-    background-image: url('images/cycling.svg');
+  background-image: url('images/cycling.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
 
 .hipster-4{
-    background-image: url('images/photograph.svg');
+  background-image: url('images/photograph.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
@@ -232,19 +232,19 @@ top: 50px;
 }
 
 .hipster-6{
-    background-image: url('images/hipster-2.svg');
+  background-image: url('images/hipster-2.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
 
 .hipster-7{
-    background-image: url('images/horn.svg');
+  background-image: url('images/horn.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
 
 .hipster-8{
-    background-image: url('images/hot-drinks.svg');
+  background-image: url('images/hot-drinks.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
@@ -256,7 +256,7 @@ top: 50px;
 
 /*styling for just flip*/
 .flip{
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .lock{
