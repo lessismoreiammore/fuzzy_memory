@@ -60,7 +60,7 @@ function userOutput(j, i) {
     newP.textContent = i;
     document.getElementById('result').appendChild(newP);
 }
-
+```
 
 This code snippet helps to erase the message after the user presses reshuffle button
 ```javascript
@@ -69,3 +69,4 @@ if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
     var sorrowParent = document.getElementById('result');
     sorrowParent.removeChild(deletedChild);
 }
+```
