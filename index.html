@@ -226,6 +226,7 @@
       //   $(this).removeClass("flip");
       //   $(this).removeClass("lock");
       // });
+
       var containers = document.querySelectorAll('.container');
       for (let i = 0; i < containers.length; i++) {
         containers[i].classList.remove('.flip');
@@ -233,10 +234,16 @@
       }
 
       //Assign a tile class to each back
-      $(".back").each(function(i) {
-        $(this).addClass(tile_array[i]);
-        $(this).parent().attr("data-name", tile_array[i]);
-      });
+      // $(".back").each(function(i) {
+      //   $(this).addClass(tile_array[i]);
+      //   $(this).parent().attr("data-name", tile_array[i]);
+      // });
+
+      var backs = document.querySelectorAll('.back');
+            for (let i = 0; i < backs.length; i++) {
+                backs[i].classList.add(tile_array[i]);
+                backs[i].parentNode.setAttribute("data-name", tile_array[i]);
+           }
 
       var deletedChild = document.getElementById('deleted');
       if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
