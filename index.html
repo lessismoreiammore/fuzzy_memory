@@ -176,9 +176,6 @@
       heading.textContent = "What is your hipster score?";
 
       //Clean a tile class of each back, need for reshuffle when the function is laucnhed 2nd or more time to delete a hipster class
-      // $(".back").each(function(i) {
-      //   $(this).removeClass(tile_array[i]);
-      // });
 
       var back = document.querySelectorAll('.back');
       for (let i = 0; i < back.length; i++) {
@@ -221,22 +218,10 @@
       tile_array.sort(randomise);
       console.log(tile_array);
 
-      //part for reshuffle when the program is launched 2nd or more time to delete classes flip and lock
-      // $(".contain").each(function() {
-      //   $(this).removeClass("flip");
-      //   $(this).removeClass("lock");
-      // });
-
       var contains = document.querySelectorAll('.contain');
       for(let i = 0; i < contains.length; i++){
         contains[i].classList.remove("flip", "lock");
       }
-
-      //Assign a tile class to each back
-      // $(".back").each(function(i) {
-      //   $(this).addClass(tile_array[i]);
-      //   $(this).parent().attr("data-name", tile_array[i]);
-      // });
 
       var backs = document.querySelectorAll('.back');
             for (let i = 0; i < backs.length; i++) {
@@ -272,7 +257,7 @@
       }
     }
 
-  //function to create an p with output according to the hipster levele
+  //function to create an p with output according to the hipster level
     function userOutput(j, i) {
       let newH = document.getElementById('message');
       newH.textContent = "Your hipster score is " + j;
@@ -282,44 +267,51 @@
       document.getElementById('result').appendChild(newP);
     }
 
-    $(".contain").click(function() {
-      if ($(this).hasClass("flip") || $(this).hasClass("lock")) {
-        return;
-      }
-
-      $(this).addClass("flip");
-
-      if (firstChoice === undefined) {
-        firstChoice = $(this);
-      } else {
-        secondChoice = $(this);
-        if (firstChoice.attr("data-name") === secondChoice.attr("data-name")) {
-          console.log("Match!");
-          counter++;
-          firstChoice.addClass("lock");
-          secondChoice.addClass("lock");
-          if (document.querySelectorAll('.lock').length === 16) {
-            counterCheck(counter);
-            userOutput(counter, output);
-          }
-        } else {
-          console.log("No match");
-          counter++;
-          let a = firstChoice;
-          let b = secondChoice;
-          setTimeout(function() {
-            a.removeClass("flip");
-            b.removeClass("flip");
-          }, 1000);
+    var containerForClick = document.querySelectorAll('.contain');
+        for(let i = 0; i < containerForClick.length; i++){
+            containerForClick[i].onclick = clickFunction;
         }
 
-        //testing line for debugging
-        console.log(counter);
+        function clickFunction(){
+            if(this.classList.contains('flip') || this.classList.contains('lock')){
+                return;
+            }
+            this.classList.add('flip');
 
-        firstChoice = undefined;
-        secondChoice = undefined;
-      }
-    });
+                if (firstChoice === undefined) {
+                    firstChoice = this;
+                } else {
+                    secondChoice = this;
+                    let firstChoiceAttribute = firstChoice.getAttribute("data-name");
+                    let secondChoiceAttribute = secondChoice.getAttribute("data-name");
+                    if( firstChoiceAttribute === secondChoiceAttribute ){
+                        console.log("Match!");
+                        counter++;
+                        firstChoice.classList.add('lock');
+                        secondChoice.classList.add('lock');
+                        if (document.querySelectorAll('.lock').length === 16) {
+                              counterCheck(counter);
+                            userOutput(counter, output);
+                            }
+                    }
+                    else {
+                        console.log("No match");
+                        counter++;
+                        let a = firstChoice;
+                        let b = secondChoice;
+                        setTimeout(function() {
+                            a.classList.remove('flip');
+                            b.classList.remove('flip');
+                        }, 1000);
+                    }
+
+                    firstChoice = undefined;
+                    secondChoice = undefined;
+                }
+        }
+
+
+
 
     //GAME FLOW
 
