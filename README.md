@@ -52,7 +52,7 @@ scores amount | type of level
 
 ##4. Code example##
 
-This code snippet solved the problem to write an ouput to the user at the end of the game
+This code snippet solved the problem to write an output to the user at the end of the game
 
 ```javascript
 function userOutput(j, i) {
@@ -73,3 +73,9 @@ if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
     sorrowParent.removeChild(deletedChild);
 }
 ```
+
+##5.Image copyright##
+
+Backround image [courtesy](https://images.unsplash.com/photo-1444374711498-d02625421725?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=6df0cd196b9e26)
+
+Game icons [courtesy](http://www.flaticon.com/packs/hipster-style-2)
