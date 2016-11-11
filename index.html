@@ -219,15 +219,15 @@
       console.log(tile_array);
 
       var contains = document.querySelectorAll('.contain');
-      for(let i = 0; i < contains.length; i++){
+      for (let i = 0; i < contains.length; i++) {
         contains[i].classList.remove("flip", "lock");
       }
 
       var backs = document.querySelectorAll('.back');
-            for (let i = 0; i < backs.length; i++) {
-                backs[i].classList.add(tile_array[i]);
-                backs[i].parentNode.setAttribute("data-name", tile_array[i]);
-           }
+      for (let i = 0; i < backs.length; i++) {
+        backs[i].classList.add(tile_array[i]);
+        backs[i].parentNode.setAttribute("data-name", tile_array[i]);
+      }
 
       var deletedChild = document.getElementById('deleted');
       if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
@@ -257,7 +257,7 @@
       }
     }
 
-  //function to create an p with output according to the hipster level
+    //function to create an p with output according to the hipster level
     function userOutput(j, i) {
       let newH = document.getElementById('message');
       newH.textContent = "Your hipster score is " + j;
@@ -268,47 +268,46 @@
     }
 
     var containerForClick = document.querySelectorAll('.contain');
-        for(let i = 0; i < containerForClick.length; i++){
-            containerForClick[i].onclick = clickFunction;
+    for (let i = 0; i < containerForClick.length; i++) {
+      containerForClick[i].onclick = clickFunction;
+    }
+
+    function clickFunction() {
+      if (this.classList.contains('flip') || this.classList.contains('lock')) {
+        return;
+      }
+      this.classList.add('flip');
+
+      if (firstChoice === undefined) {
+        firstChoice = this;
+      } else {
+        secondChoice = this;
+        let firstChoiceAttribute = firstChoice.getAttribute("data-name");
+        let secondChoiceAttribute = secondChoice.getAttribute("data-name");
+        if (firstChoiceAttribute === secondChoiceAttribute) {
+          console.log("Match!");
+          counter++;
+          firstChoice.classList.add('lock');
+          secondChoice.classList.add('lock');
+          if (document.querySelectorAll('.lock').length === 16) {
+            counterCheck(counter);
+            userOutput(counter, output);
+          }
+        } else {
+          console.log("No match");
+          counter++;
+          let a = firstChoice;
+          let b = secondChoice;
+          setTimeout(function() {
+            a.classList.remove('flip');
+            b.classList.remove('flip');
+          }, 1000);
         }
 
-        function clickFunction(){
-            if(this.classList.contains('flip') || this.classList.contains('lock')){
-                return;
-            }
-            this.classList.add('flip');
-
-                if (firstChoice === undefined) {
-                    firstChoice = this;
-                } else {
-                    secondChoice = this;
-                    let firstChoiceAttribute = firstChoice.getAttribute("data-name");
-                    let secondChoiceAttribute = secondChoice.getAttribute("data-name");
-                    if( firstChoiceAttribute === secondChoiceAttribute ){
-                        console.log("Match!");
-                        counter++;
-                        firstChoice.classList.add('lock');
-                        secondChoice.classList.add('lock');
-                        if (document.querySelectorAll('.lock').length === 16) {
-                              counterCheck(counter);
-                            userOutput(counter, output);
-                            }
-                    }
-                    else {
-                        console.log("No match");
-                        counter++;
-                        let a = firstChoice;
-                        let b = secondChoice;
-                        setTimeout(function() {
-                            a.classList.remove('flip');
-                            b.classList.remove('flip');
-                        }, 1000);
-                    }
-
-                    firstChoice = undefined;
-                    secondChoice = undefined;
-                }
-        }
+        firstChoice = undefined;
+        secondChoice = undefined;
+      }
+    }
 
 
 
