@@ -4,6 +4,8 @@
 My project's main purpose was to create a simple memory game in pure HTML, CSS, JS and place it in a nice UI.
 I prefer to make a kind of eLearning project about hipsters.
 
+The planning and implementation process you can see [here](https://trello.com/b/HxNq4h6u/fuzzy-memory).
+
 ##1. Example##
 
 This screenshot show the basic flow of the game
