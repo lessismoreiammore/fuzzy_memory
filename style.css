@@ -39,7 +39,7 @@ p {
 /* Main */
 .main {
   height: 800px;
-  background: url('https://a2ua.com/hipster/hipster-007.jpg')no-repeat center center;
+  /*background: url('https://a2ua.com/hipster/hipster-007.jpg')no-repeat center center;*/
   background-position: top;
   background-size: cover;
   color:#fff;
@@ -129,7 +129,7 @@ p {
 
 /* Footer */
 .footer {
- background: url('https://a2ua.com/hipster/hipster-007.jpg') no-repeat center center;
+/*background: url('https://a2ua.com/hipster/hipster-007.jpg') no-repeat center center;*/
 background-size: cover;
 background-position: top;
 height: 800px;
