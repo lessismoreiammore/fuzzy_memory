@@ -222,10 +222,15 @@
       console.log(tile_array);
 
       //part for reshuffle when the program is launched 2nd or more time to delete classes flip and lock
-      $(".contain").each(function() {
-        $(this).removeClass("flip");
-        $(this).removeClass("lock");
-      });
+      // $(".contain").each(function() {
+      //   $(this).removeClass("flip");
+      //   $(this).removeClass("lock");
+      // });
+      var containers = document.querySelectorAll('.container');
+      for (let i = 0; i < containers.length; i++) {
+        containers[i].classList.remove('.flip');
+        containers[i].classList.remove('.lock');
+      }
 
       //Assign a tile class to each back
       $(".back").each(function(i) {
