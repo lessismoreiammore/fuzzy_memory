@@ -222,10 +222,15 @@
       console.log(tile_array);
 
       //part for reshuffle when the program is launched 2nd or more time to delete classes flip and lock
-      $(".contain").each(function() {
-        $(this).removeClass("flip");
-        $(this).removeClass("lock");
-      });
+      // $(".contain").each(function() {
+      //   $(this).removeClass("flip");
+      //   $(this).removeClass("lock");
+      // });
+
+      var contains = document.querySelectorAll('.contain');
+      for(let i = 0; i < contains.length; i++){
+        contains[i].classList.remove("flip", "lock");
+      }
 
       //Assign a tile class to each back
       // $(".back").each(function(i) {
@@ -249,10 +254,13 @@
     //GAME LOGIC
     var firstChoice = undefined;
     var secondChoice = undefined;
+
     //variable to save the number of clicks which will be used
     var counter = 0;
+
     //variable which store the game ouput
     var output = " ";
+
     // user raiting check
     function counterCheck(i) {
       if (i <= 16) {
@@ -264,6 +272,7 @@
       }
     }
 
+  //function to create an p with output according to the hipster levele
     function userOutput(j, i) {
       let newH = document.getElementById('message');
       newH.textContent = "Your hipster score is " + j;
