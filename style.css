@@ -47,8 +47,8 @@ p {
 }
 
 .main .container {
-    position: relative;
-    top: 150px;
+  position: relative;
+  top: 150px;
 }
 
 .main h1 {
@@ -126,19 +126,25 @@ p {
   color:#261d16;
 }
 
+.feature iframe{
+  width:640px;
+  height: 360px;
+  border-width: 0;
+}
+
 
 /* Footer */
 .footer {
-background: url('images/background.jpeg')no-repeat center center;
-background-size: cover;
-background-position: top;
-height: 800px;
-text-align: center;
-  }
+  background: url('images/background.jpeg')no-repeat center center;
+  background-size: cover;
+  background-position: top;
+  height: 800px;
+  text-align: center;
+}
 
 .footer .container{
-position: relative;
-top: 50px;
+  position: relative;
+  top: 50px;
 }
 
 .footer h2 {
@@ -146,7 +152,7 @@ top: 50px;
   font-size: 40px;
   margin: 0 0 20px 0;
   padding:50px 0 0;
-  }
+}
 
 .footer p {
   color:#ff462e;
@@ -212,7 +218,7 @@ top: 50px;
 }
 
 .hipster-3{
-    background-image: url('images/cycling.svg');
+  background-image: url('images/cycling.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
@@ -254,9 +260,10 @@ top: 50px;
 
 /*styling for just flip*/
 .flip{
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
+/*this class is used so that not to allow the card to flip back so basically it changes nothing after the card is chosen correctly*/
 .lock{
 
 }

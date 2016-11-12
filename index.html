@@ -6,7 +6,6 @@
   <title>what is a hipster, man? web-tutorial for complete beginners</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="style.css" media="screen">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +42,7 @@
     <div class="container">
       <h2>Come on, these are just stereotypes, man! </h2>
       <p>For deepen your knowledge, please, check our video</p>
-      <iframe width="640" height="360" src="https://www.youtube.com/embed/jbTI7eWaQbk" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/jbTI7eWaQbk" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -166,22 +165,26 @@
     }
 
     // GAME SETUP
+
+    // this array will hold an array of random classes for tiles; it declared and intialised here so that to make it global
     var tile_array = [];
 
+    // this function is used to prepare the board before the game
     function gameSetUp() {
+
       //this counter is used for making a game raiting, see its explanation under the game logic section of script
       //it gains null value here so that after reshuffle the user can have a new raiting
       counter = 0;
+
+      //This is used to return to the initial message in the game after the board is reshuffled
       var heading = document.getElementById('message');
       heading.textContent = "What is your hipster score?";
 
       //Clean a tile class of each back, need for reshuffle when the function is laucnhed 2nd or more time to delete a hipster class
-
       var back = document.querySelectorAll('.back');
       for (let i = 0; i < back.length; i++) {
         back[i].classList.remove(tile_array[i]);
       }
-
 
       //array of class names
       var hipster_array = [
@@ -199,15 +202,16 @@
       // If there is no copy after the button reshuffle is pressed nothing will be displayed as cards since the array has been modified by the first run of the program
       var temp_array = hipster_array.slice(0);
 
-      //An array for the tiles to create
-      //this array will hold an array of random classes for tiles
+      //this array is initialised here so that after the reshuffle will work properly
       tile_array = [];
+
       //this array is used to set the number of pairs
       var tile_pairs = 8;
 
       //Loop through all of the tiles and make a new array of pairs by assigning a random hipster class to the empty array
       for (let i = 0; i < tile_pairs; i++) {
         let r = random(temp_array.length);
+
         //Add the random hipster class twice since we need a pair for a memory game
         let tile = temp_array.splice(r, 1);
         tile_array = tile_array.concat(tile);
@@ -218,17 +222,20 @@
       tile_array.sort(randomise);
       console.log(tile_array);
 
+      //remove the classes lock and flip for reshuffle
       var contains = document.querySelectorAll('.contain');
       for (let i = 0; i < contains.length; i++) {
         contains[i].classList.remove("flip", "lock");
       }
 
+      //add the class not only to the child but to parent as well so that make it possible to compare them further
       var backs = document.querySelectorAll('.back');
       for (let i = 0; i < backs.length; i++) {
         backs[i].classList.add(tile_array[i]);
         backs[i].parentNode.setAttribute("data-name", tile_array[i]);
       }
 
+      //erase output message after the game is reshuffled
       var deletedChild = document.getElementById('deleted');
       if (typeof(deletedChild) != 'undefined' && deletedChild != null) {
         var sorrowParent = document.getElementById('result');
@@ -237,6 +244,8 @@
     }
 
     //GAME LOGIC
+
+    //variable which will store the info about user choices for a potential pair
     var firstChoice = undefined;
     var secondChoice = undefined;
 
@@ -267,28 +276,40 @@
       document.getElementById('result').appendChild(newP);
     }
 
+    //assing click function to any possible card so that it will react properly after being clicked
     var containerForClick = document.querySelectorAll('.contain');
     for (let i = 0; i < containerForClick.length; i++) {
       containerForClick[i].onclick = clickFunction;
     }
 
+    //function which starts after a user click on a card
     function clickFunction() {
+
+      //if the card has both classes flip and lock there is a function exit since the cards are open and it makes no sense to click on them
       if (this.classList.contains('flip') || this.classList.contains('lock')) {
         return;
       }
+
+      //add class flip to a clicked card
       this.classList.add('flip');
 
+      //storing first click card into a variable
       if (firstChoice === undefined) {
         firstChoice = this;
       } else {
+        //storing second click card into a variable
         secondChoice = this;
+        //comparing first and second clicks cards
         let firstChoiceAttribute = firstChoice.getAttribute("data-name");
         let secondChoiceAttribute = secondChoice.getAttribute("data-name");
         if (firstChoiceAttribute === secondChoiceAttribute) {
           console.log("Match!");
           counter++;
+          //add class lock so that the card will not flip back
           firstChoice.classList.add('lock');
           secondChoice.classList.add('lock');
+
+          //if all the cards are open the user gets an output message with the score
           if (document.querySelectorAll('.lock').length === 16) {
             counterCheck(counter);
             userOutput(counter, output);
@@ -296,6 +317,7 @@
         } else {
           console.log("No match");
           counter++;
+          //flip back cards if the choice is incorrect
           let a = firstChoice;
           let b = secondChoice;
           setTimeout(function() {
@@ -304,13 +326,11 @@
           }, 1000);
         }
 
+        //erase values from the variables so that the user can continue with the next clicks
         firstChoice = undefined;
         secondChoice = undefined;
       }
     }
-
-
-
 
     //GAME FLOW
 
