@@ -24,7 +24,7 @@ The game is repeated after the user presses the **"Play again↻"** button.
 
 No installation is required since the project is a simple web application with a JS script inside.
 
-To run the project, simply run the [index.html](index.html).
+To run the project, simply click the [index.html](index.html) in the project folder.
 
 The project was tested in major modern browsers (Safari, Chrome, Firefox, etc.) and behaves correctly.
 
@@ -34,7 +34,7 @@ All the selectors were checked whether they require any web browser prefix.
 
 ##3. Program flow##
 
-The website is organized in a sequential way. Firstly, the users get to know about a hipster stereotypes.
+The website is organized in a sequential way. Firstly, the users get to know about common hipster stereotypes.
 
 Secondly, the users look at the "study" material so that to enhance their knowledge in the topic.
 
